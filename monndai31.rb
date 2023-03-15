@@ -1,4 +1,5 @@
 # クラスのオブジェクトを作成し、クラスを確認
+
 class Caffelatte
 end
 
