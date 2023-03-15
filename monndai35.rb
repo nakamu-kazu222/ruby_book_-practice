@@ -1,4 +1,5 @@
 # クラスを継承する
+
 class Item 
   def name 
     @name 
