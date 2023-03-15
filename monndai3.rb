@@ -1,4 +1,5 @@
 # if,elseを使用した、条件処理
+
 wallet = 100
 
 if wallet >= 120
