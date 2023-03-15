@@ -1,4 +1,5 @@
 # ハッシュからキーに対応する値を取得する
+
 menu1 = {coffee: 300, caffe_latte: 400}
 puts(menu1[:caffe_latte])
 
