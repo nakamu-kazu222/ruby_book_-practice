@@ -1,4 +1,5 @@
 # クラスにクラスメソッドを定義する
+
 class Drink
   binding.pry
   def self.todays_special  

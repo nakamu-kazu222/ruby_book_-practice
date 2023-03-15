@@ -1,4 +1,5 @@
 # caseを使用して、条件処理
+
 season = "春"
 
 case season

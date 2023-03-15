@@ -1,4 +1,5 @@
 # クラスにinitializeメソッドを定義し、オブジェクトを2つ作り、インスタンス変数を表示する
+
 class Item
   def initialize(name)    
     @name = name

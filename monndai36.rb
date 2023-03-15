@@ -1,4 +1,5 @@
 # モジュールを定義し、インクルードで呼び出す
+
 module ChocolateChip
   def chocolate_chip 
     @name = name + "チョコレートチップ"
