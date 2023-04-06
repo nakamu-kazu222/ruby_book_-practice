@@ -1,11 +1,32 @@
 # frozen_string_literal: true
+require 'optparse'
 
 # 行数指定
 COLUMN_COUNT = 3
 
+def ls_arg
+  options = OptionParser.new
+  options = ARGV.getopts("","a")
+  
+  if options["a"] == true
+    opt_ls_a
+  else
+    opt_ls
+  end
+end
+
+def opt_ls
+  ary = Dir.glob('*')
+  chara_length(ary)
+end
+
+def opt_ls_a
+  ary = Dir.foreach('.').sort
+  chara_length(ary)
+end
+
 # 全ファイル名の文字数を揃える
-def chara_length
-  ary = Dir.glob('*', File::FNM_DOTMATCH)
+def chara_length(ary)
   max_chara = ary.max_by(&:size)
   ary = ary.map { |max_chara_space| max_chara_space.ljust(max_chara.size + 6) }
   file_set(ary)
@@ -49,4 +70,4 @@ def display(print_ls)
   end
 end
 
-chara_length
+ls_arg
