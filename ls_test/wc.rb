@@ -53,6 +53,7 @@ end
 
 def word_line_size_count_in_array(acquisition_argument_filename)
   array_wc_count = []
+  # パイプで標準入力を取得する場合
   if acquisition_argument_filename.empty?
     standard_input_text = $stdin.read
     size_count = standard_input_text.bytesize
@@ -67,6 +68,7 @@ def word_line_size_count_in_array(acquisition_argument_filename)
       word_count = word_count_calc(file)
       array_wc_count << { line_count:, word_count:, size_count:, file: }
     end
+    # 引数のファイルが2つの場合に、合計値を追加する
     if acquisition_argument_filename.count > 1
       line_count = total_line_count_calc(acquisition_argument_filename)
       word_count = total_word_count_calc(acquisition_argument_filename)
@@ -101,6 +103,5 @@ def display_wc(array_wc_count)
 end
 
 array_wc_count = word_line_size_count_in_array(acquisition_argument_filename)
-binding.irb
 array_wc_count = array_wc_count_adjust_indentation(select_options, array_wc_count)
 display_wc(array_wc_count)
